@@ -14,8 +14,8 @@
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
-                    <li><a href="#">Education</a></li>
                     <li><a href="#">Hobbies</a></li>
+                    <li><a href="#">Statement</a></li>
                 </ul>
             </nav>
             <div class="header-text">
@@ -24,6 +24,8 @@
             </div>
         </div>
 </div>
+
+<!-- about -->
 
 <div id="about">
     <div class="container">
@@ -38,21 +40,53 @@
                 </p>
 
                 <div class="tab-titles">
-                    <p class="tab-links active-link">Skills</p>
-                    <p class="tab-links">Experience</p>
-                    <p class="tab-links">Education</p>
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
                 </div>
-                <div class="tab-contents">
+                <div class="tab-contents active-tab" id="skills">
                     <ul>
                         <li><span>Epic Web Developer</span><br>Web development god</li>
                         <li><span>Python Visionary</span><br>Made an 8-Ball program</li>
                         <li><span>Unity Game Developer</span><br>Making a 2D game in sometime</li>
                     </ul>
                 </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>Web Development</span><br>Developed  a website for a company caleed Alfresco Coffee. </li>
+                        <li><span>IBM Workshop</span><br>Did that recycling thang with the IBM Wattson chatbot</li>
+                        <li><span>Cleaning</span><br>Did some cleaning for a company back in my day</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2017 - 2022</span><br>Whitstone School</li>
+                        <li><span>2022 - Current</span><br>Strode College</li>
+                        <li><span>Uni?</span><br>Planning to go after college don't know when or how</li>
+                    </ul>
+                </div>
             </div>    
         </div>
     </div>
 </div>
+<!-- services -->
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab"); 
+    }
+
+</script>
     
 </body>
 </html>
