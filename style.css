@@ -323,6 +323,10 @@ form .btn2{
     margin-top: 20px;
 }
 /* ---css for small screen---*/
+nav .fas{
+    display: none;
+}
+
 @media only screen and (max-width: 600px){
     #header{
         background-image: url(images/lmaosmol.png);
@@ -333,5 +337,18 @@ form .btn2{
     }
     .header-text h1{
         font-size: 30px;
+    }
+    nav .fas{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul{
+        background: #800080;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 100vh;
+        padding-top: 50px;
     }
 }
